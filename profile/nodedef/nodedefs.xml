@@ -1,0 +1,13 @@
+<nodeDefs>
+  <nodeDef id="wol" nls="str">
+    <sts>
+	</sts>
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="WOL" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+</nodeDefs>
+

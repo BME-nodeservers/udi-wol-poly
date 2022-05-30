@@ -1,0 +1,3 @@
+ND-wol-NAME = Wake-On-Lan
+ND-wol-ICON = Output
+CMD-str-WOL-NAME = Send WOL

@@ -1,0 +1,31 @@
+{
+    "name": "Wake-On-Lan",
+    "docs": "https://github.com/BME-Nodeservers/udi-wol-poly/README.md",
+    "type": "python3",
+    "executable": "wol.py",
+    "install": "install.sh",
+    "description": "Send WOL packets to hosts",
+    "shortPoll": "60",
+    "longPoll": "600",
+	  "logLevel": "INFO",
+    "profile_version": "1.0.0",
+	"customParams": {
+	},
+    "credits": [
+    	{
+    		"title": "Wake on Lan node server for ISY/Polyglot",
+    		"author": "Bob Paauwe",
+    		"version": "1.0.0",
+    		"date": "May 30, 2022",
+    		"source": "https://github.com/BME-Nodeservers/udi-wol-poly",
+			"license": "https://github.com/BME-Nodeservers/udi-wol-poly/LICENSE"
+		}
+	],
+	"store" : {
+		"developer": "bpaauwe@bobsplace.com",
+		"price": 0.00,
+		"recurring": 0,
+		"recurring_interval": "month",
+		"recurring_period": 0
+	}
+}
