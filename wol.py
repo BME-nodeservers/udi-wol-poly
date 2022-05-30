@@ -8,6 +8,7 @@ MIT License
 import udi_interface
 import sys
 import time
+from wakeonlan import send_magic_packet
 
 LOGGER = udi_interface.LOGGER
 polyglot = None
@@ -33,6 +34,7 @@ class WOLNode(udi_interface.Node):
 
     def wakeOnLan(self, command):
         LOGGER.info('Sending magic WOL packet to {} ({})'.format(self.mac, self.name))
+        send_magic_packet(self.mac)
 
     commands = {'WOL': wakeOnLan}
 
