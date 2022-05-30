@@ -1,6 +1,6 @@
 {
     "name": "Wake-On-Lan",
-    "docs": "https://github.com/BME-Nodeservers/udi-wol-poly/README.md",
+    "docs": "https://github.com/BME-nodeservers/udi-wol-poly/README.md",
     "type": "python3",
     "executable": "wol.py",
     "install": "install.sh",
@@ -17,8 +17,8 @@
     		"author": "Bob Paauwe",
     		"version": "1.0.0",
     		"date": "May 30, 2022",
-    		"source": "https://github.com/BME-Nodeservers/udi-wol-poly",
-			"license": "https://github.com/BME-Nodeservers/udi-wol-poly/LICENSE"
+    		"source": "https://github.com/BME-nodeservers/udi-wol-poly",
+			"license": "https://github.com/BME-nodeservers/udi-wol-poly/LICENSE"
 		}
 	],
 	"store" : {
