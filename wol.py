@@ -8,6 +8,7 @@ MIT License
 import udi_interface
 import sys
 import time
+import re
 from wakeonlan import send_magic_packet
 
 LOGGER = udi_interface.LOGGER
@@ -69,7 +70,9 @@ def parameterHandler(params):
     for param in params:
         host = param
         mac = params[param]
-        address = polyglot.getValidAddress(mac.lower())
+        #address = polyglot.getValidAddress(mac)
+        address = bytes(mac, 'utf-8').decode('utf-8','ignore')
+        address = re.sub(r"[<>`~!@#$%^&*(){}[\]?/\\;:\"'\-]+", "", address.lower()[:14])
         if not polyglot.getNode(address):
             node = WOLNode(polyglot, address, address, host, mac)
             polyglot.addNode(node)
