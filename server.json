@@ -15,8 +15,8 @@
     	{
     		"title": "Wake on Lan node server for ISY/Polyglot",
     		"author": "Bob Paauwe",
-    		"version": "1.0.0",
-    		"date": "May 30, 2022",
+    		"version": "1.0.1",
+    		"date": "May 31, 2022",
     		"source": "https://github.com/BME-nodeservers/udi-wol-poly",
 			"license": "https://github.com/BME-nodeservers/udi-wol-poly/LICENSE"
 		}

@@ -3,5 +3,6 @@
 Custom Parameters:
 
 Key = Host Name
-Value = Mac Address
+Value = Mac Address (xx:xx:xx:xx:xx:xx)
+
 
