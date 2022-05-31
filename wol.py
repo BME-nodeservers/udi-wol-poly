@@ -63,7 +63,7 @@ def parameterHandler(params):
     global polyglot
 
     LOGGER.error('CUSTOMPARAMS handler called {}'.format(params))
-    if !params:
+    if not params:
         return
 
     for param in params:
