@@ -25,18 +25,19 @@ class WOLNode(udi_interface.Node):
     drivers = [
             ]
 
-    def __init__ (self, polyglot, primary, address, name, mac):
+    def __init__ (self, polyglot, primary, address, name, mac, ip):
         self.poly = polyglot
         self.address = address
         self.name = name
         self.mac = mac
+        self.ip = ip
         super(WOLNode, self).__init__(polyglot, primary, address, name)
 
 
     def wakeOnLan(self, command):
         LOGGER.info('Sending magic WOL packet to {} ({})'.format(self.mac, self.name))
         try:
-            send_magic_packet(self.mac)
+            send_magic_packet(self.mac, ip_address=self.ip)
         except Exception as e:
             LOGGER.error('Failed to send WOL packet to {}: {}'.format(self.name, e))
 
@@ -69,12 +70,14 @@ def parameterHandler(params):
 
     for param in params:
         host = param
-        mac = params[param]
+        mac = params[param].split('/')[0]
+        ip = params[param].split('/')[1]
+
         #address = polyglot.getValidAddress(mac)
         address = bytes(mac, 'utf-8').decode('utf-8','ignore')
         address = re.sub(r"[<>`~!@#$%^&*(){}[\]?/\\;:\"'\-]+", "", address.lower()[:14])
         if not polyglot.getNode(address):
-            node = WOLNode(polyglot, address, address, host, mac)
+            node = WOLNode(polyglot, address, address, host, mac, ip)
             polyglot.addNode(node)
             wait_for_node_event()
         else:
@@ -88,7 +91,7 @@ def parameterHandler(params):
 if __name__ == "__main__":
     try:
         polyglot = udi_interface.Interface([])
-        polyglot.start('1.0.1')
+        polyglot.start('1.0.2')
 
         # subscribe to the events we want
         polyglot.subscribe(polyglot.CUSTOMPARAMS, parameterHandler)
