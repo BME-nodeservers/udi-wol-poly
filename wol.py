@@ -64,7 +64,7 @@ There should be one or more host : mac address parameters
 def parameterHandler(params):
     global polyglot
 
-    LOGGER.error('CUSTOMPARAMS handler called {}'.format(params))
+    LOGGER.debug('CUSTOMPARAMS handler called {}'.format(params))
     if not params:
         return
 
@@ -85,13 +85,13 @@ def parameterHandler(params):
             node = polyglot.getNode(address)
             node.mac = mac
 
-    LOGGER.error('Finished processing custom parameters')
+    LOGGER.debug('Finished processing custom parameters')
 
 
 if __name__ == "__main__":
     try:
         polyglot = udi_interface.Interface([])
-        polyglot.start('1.0.2')
+        polyglot.start('1.0.3')
 
         # subscribe to the events we want
         polyglot.subscribe(polyglot.CUSTOMPARAMS, parameterHandler)
